@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `src/main.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>main.rs - source</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled ><script id="default-settings"></script><script src="../../storage.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="alternate icon" type="image/png" href="../../favicon-16x16.png">
+<link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><a href='../../guessing_game/index.html'><div class='logo-container rust-logo'><img src='../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu"><img src="../../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices" role="menu"></div></div><script src="../../theme.js"></script><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" class="help-button">?</button>
+                <a id="settings-menu" href="../../settings.html"><img src="../../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><pre class="line-numbers"><span id="1"> 1</span>
+<span id="2"> 2</span>
+<span id="3"> 3</span>
+<span id="4"> 4</span>
+<span id="5"> 5</span>
+<span id="6"> 6</span>
+<span id="7"> 7</span>
+<span id="8"> 8</span>
+<span id="9"> 9</span>
+<span id="10">10</span>
+<span id="11">11</span>
+<span id="12">12</span>
+<span id="13">13</span>
+<span id="14">14</span>
+<span id="15">15</span>
+<span id="16">16</span>
+<span id="17">17</span>
+<span id="18">18</span>
+<span id="19">19</span>
+<span id="20">20</span>
+<span id="21">21</span>
+<span id="22">22</span>
+<span id="23">23</span>
+<span id="24">24</span>
+<span id="25">25</span>
+<span id="26">26</span>
+<span id="27">27</span>
+<span id="28">28</span>
+<span id="29">29</span>
+<span id="30">30</span>
+<span id="31">31</span>
+<span id="32">32</span>
+<span id="33">33</span>
+<span id="34">34</span>
+<span id="35">35</span>
+<span id="36">36</span>
+<span id="37">37</span>
+<span id="38">38</span>
+<span id="39">39</span>
+<span id="40">40</span>
+<span id="41">41</span>
+<span id="42">42</span>
+<span id="43">43</span>
+<span id="44">44</span>
+<span id="45">45</span>
+</pre><div class="example-wrap"><pre class="rust ">
+<span class="comment">// Use the standard input/output library</span>
+<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">io</span>;
+<span class="comment">// &quot;Library Crate&quot; rand added to Cargo.toml file.</span>
+<span class="comment">// Ran cargo build again to install the dependencies</span>
+<span class="comment">// Using Rng (random number generator) trait</span>
+<span class="kw">use</span> <span class="ident">rand</span>::<span class="ident">Rng</span>;
+
+<span class="comment">// Define a function w/ no parameters.</span>
+<span class="kw">fn</span> <span class="ident">main</span>() {
+    <span class="comment">// Macro printing a string to the screen.</span>
+    <span class="macro">println</span><span class="macro">!</span>(<span class="string">&quot;Guess the number!&quot;</span>);
+
+    <span class="comment">// thread_rng() defines the specific rng that will be used: local to current thread and seeded by OS.</span>
+    <span class="comment">// gen_range() takes range expression (start..end), alternatively: gen_range(1..=100)</span>
+    <span class="kw">let</span> <span class="ident">secret_number</span> <span class="op">=</span> <span class="ident">rand</span>::<span class="ident">thread_rng</span>().<span class="ident">gen_range</span>(<span class="number">1</span>..<span class="number">101</span>);
+
+    <span class="macro">println</span><span class="macro">!</span>(<span class="string">&quot;Please input your guess.&quot;</span>);
+
+    <span class="comment">// Create a variable to store user input.</span>
+    <span class="comment">// let is used to create a variable. ex. `let foo = bar;`</span>
+    <span class="comment">// Variables are immutable by default in Rust, mut allows variable to be mutable.</span>
+    <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">guess</span> <span class="op">=</span> <span class="ident">String</span>::<span class="ident">new</span>();
+    <span class="comment">// String is a string type provided by the standard library that is growable, utf-8 encoded.</span>
+    <span class="comment">// :: means that the new function is an &quot;associated function&quot; of the String type.</span>
+    <span class="comment">// A.k.a. a static method, an associated function is implemented on a type (class?) rather than an instance.</span>
+    <span class="comment">// String::new() creates a new, empty instance of a string.</span>
+
+    <span class="comment">// Returns an instance of Stdin from the io module. Alternatively std::io::stdin()</span>
+    <span class="ident">io</span>::<span class="ident">stdin</span>()
+        <span class="comment">// Calls readline method on the Stdin object</span>
+        <span class="comment">// Overrides guess (an empty string) with whatever the user input.</span>
+        <span class="comment">// &amp; is a reference to allow multiple parts of your code access one piece</span>
+        <span class="comment">// of data without having to copy it into memory multiple times.</span>
+        .<span class="ident">read_line</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">guess</span>)
+        <span class="comment">// read_line assigns the user input to the string but also returns an io::Result type that can be &#39;Ok&#39; or &#39;Err&#39;.</span>
+        <span class="comment">// These are called variants. Within the variant is either the generated result or the error, respectively.</span>
+        <span class="comment">// Leaving out the expect function would still allow the program to compile but would bring up a</span>
+        <span class="comment">// warning letting you know that this process may result in an error and that it should be taken into account.</span>
+        .<span class="ident">expect</span>(<span class="string">&quot;Failed to read line.&quot;</span>);
+        <span class="comment">// Could have been written as: io::stdin().read_line(&amp;mut guess).expect(&quot;Failed to read line.&quot;);</span>
+    
+    <span class="comment">// Prints the variable that we saved the user input in.</span>
+    <span class="comment">// Similar to Python format strings.</span>
+    <span class="macro">println</span><span class="macro">!</span>(<span class="string">&quot;You guessed: {}&quot;</span>, <span class="ident">guess</span>);
+}
+</pre></div>
+</section><section id="search" class="content hidden"></section><section class="footer"></section><div id="rustdoc-vars" data-root-path="../../" data-current-crate="guessing_game"></div>
+    <script src="../../main.js"></script><script src="../../source-script.js"></script><script src="../../source-files.js"></script><script defer src="../../search-index.js"></script></body></html>

@@ -1,0 +1,11 @@
+/mnt/c/Users/dakot/dev/misc/rust/guessing_game/target/debug/deps/getrandom-5497292c12631360.rmeta: /home/dakotagporter/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.2/src/lib.rs /home/dakotagporter/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.2/src/error.rs /home/dakotagporter/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.2/src/util.rs /home/dakotagporter/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.2/src/error_impls.rs /home/dakotagporter/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.2/src/util_libc.rs /home/dakotagporter/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.2/src/use_file.rs /home/dakotagporter/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.2/src/linux_android.rs
+
+/mnt/c/Users/dakot/dev/misc/rust/guessing_game/target/debug/deps/getrandom-5497292c12631360.d: /home/dakotagporter/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.2/src/lib.rs /home/dakotagporter/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.2/src/error.rs /home/dakotagporter/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.2/src/util.rs /home/dakotagporter/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.2/src/error_impls.rs /home/dakotagporter/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.2/src/util_libc.rs /home/dakotagporter/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.2/src/use_file.rs /home/dakotagporter/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.2/src/linux_android.rs
+
+/home/dakotagporter/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.2/src/lib.rs:
+/home/dakotagporter/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.2/src/error.rs:
+/home/dakotagporter/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.2/src/util.rs:
+/home/dakotagporter/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.2/src/error_impls.rs:
+/home/dakotagporter/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.2/src/util_libc.rs:
+/home/dakotagporter/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.2/src/use_file.rs:
+/home/dakotagporter/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.2.2/src/linux_android.rs:
