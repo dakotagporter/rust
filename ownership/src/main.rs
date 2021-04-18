@@ -67,7 +67,7 @@ fn main() {
     // - A length (amount of memory in bytes currently used by the string).
     // - A capacity (total amount given by the allocator).
     // A.k.a., both s1 and s2 both POINT to the SAME ITEM in memory.**
-    // WARNING: when s1 and s2 go out ofscope, they will both try to free up the same space in memory (double free error).
+    // WARNING: when s1 and s2 go out of scope, they will both try to free up the same space in memory (double free error).
 
     // **To avoid the error mentioned above, when a value is 'copied' (like we tried above),
     // Rust invalidates the first variable. It 'moves' rather than 'copies' the data from s1 TO s2.
