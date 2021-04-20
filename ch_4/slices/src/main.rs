@@ -23,7 +23,7 @@ fn first_word(s: &String) -> usize { // Compiles but is dangerous because the st
     s.len() // Return the length of the string if no spaces are found.
 }
 
-fn rewrite_first_word(s: &String) -> &str { // str refers to a string slice type.
+fn rewrite_first_word(s: &str) -> &str { // str refers to a string slice type.
     let bytes = s.as_bytes();
 
     for (i, &item) in bytes.iter().enumerate() {
@@ -37,4 +37,14 @@ fn rewrite_first_word(s: &String) -> &str { // str refers to a string slice type
 
 /////// Slices
 // Similar to slices in Python, slices in Rust do NOT have ownership.
-// 
+// String literals:
+let s = "Hello, world!"
+//  - Here, s is an immutable because it's type is &str (a pointer to a specific location in binary)
+//  - You can take slices of both literals and String types.
+//  - Using rewrite_first_word function above is the most generalized we can make it. It will take
+//    both String and &str types.
+//  - Can also slice arrays.
+
+////// All the process ensure memory safety at compile time.
+// The Rust language gives you control over your memory usage in the same way as other systems programming languages, but having the owner of data automatically
+// clean up that data when the owner goes out of scope means you don’t have to write and debug extra code to get this control.
